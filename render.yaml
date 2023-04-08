@@ -1,0 +1,17 @@
+services:
+  - name: web
+    buildCommand: npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+    healthCheckPath: /health
+    port: 5000
+  - name: api
+    buildCommand: npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+    healthCheckPath: /health
+    port: 3001
